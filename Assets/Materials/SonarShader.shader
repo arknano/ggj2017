@@ -8,7 +8,7 @@
 		SubShader
 	{
 		// No culling or depth
-		Cull Back ZWrite Off ZTest Always
+		Cull Back ZWrite On ZTest LEqual
 
 		Pass
 		{
@@ -50,7 +50,7 @@
 				// just invert the colors
 				col = col;
 
-				if (i.world.x > _TestPosWow.x && i.world.x < _TestPosWow.x + 0.2) {
+				if (i.world.x > _TestPosWow.x && i.world.x < _TestPosWow.x + 1) {
 				//if (_TestPosWow.sx != 4) {
 					return fixed4(1, 1, 1, 1);
 				}
