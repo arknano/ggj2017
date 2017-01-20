@@ -127,8 +127,8 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _TestPosWow
-<<<<<<< HEAD
+
       second: {r: 513, g: 0, b: 0, a: 1}
-=======
+
       second: {r: 45.41, g: 0, b: 0, a: 1}
->>>>>>> 50d50363419e6cd39c97c78cc454825bb55b2fdc
+
