@@ -116,6 +116,9 @@ Material:
         name: _UVSec
       second: 0
     - first:
+        name: _X
+      second: 0
+    - first:
         name: _ZWrite
       second: 1
     m_Colors:
@@ -127,4 +130,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _TestPosWow
-      second: {r: 45.41, g: 0, b: 0, a: 1}
+      second: {r: 78.9, g: 0, b: 0, a: 1}

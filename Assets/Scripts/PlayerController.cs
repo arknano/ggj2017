@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour {
     public float forwardSpeed;
     public float horizSpeed;
     public float vertSpeed;
+    public float turnSpeed;
     public float slowSpeed;
 
     InputDevice controller;
     Rigidbody rb;
+    public Transform thruster;
 
     // Use this for initialization
     void Start () {
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour {
         rb.AddForce(transform.up * vertical * vertSpeed);
         rb.AddForce(-velocity * slowSpeed);
 
-        transform.Rotate(0, turn * 0.2f, 0);
+        rb.AddForceAtPosition(-transform.right * turn * turnSpeed, thruster.position);
+        rb.angularVelocity = rb.angularVelocity * 0.9f;
     }
 }
