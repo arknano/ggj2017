@@ -154,4 +154,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _Tint
-      second: {r: 0.11180795, g: 0.2468187, b: 0.32352942, a: 1}
+      second: {r: 0, g: 0, b: 0, a: 1}
