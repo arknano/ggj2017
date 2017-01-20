@@ -6,7 +6,7 @@ public class PlayerPower : MonoBehaviour {
 
     public int startingPower;
     public float currentPower;
-    public Slider powerSlider;
+    public Image powerSlider;
     public float rechargeSpeed;
 
 	// Use this for initialization
@@ -21,6 +21,6 @@ public class PlayerPower : MonoBehaviour {
         {
             currentPower = startingPower;
         }
-        powerSlider.value = currentPower;
+        powerSlider.fillAmount = currentPower /100;
 	}
 }

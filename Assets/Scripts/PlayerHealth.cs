@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int startingHealth;
     public float currentHealth;
-    public Slider healthSlider;
+    public Image healthSlider;
     public float rechargeSpeed;
 
     // Use this for initialization
@@ -24,6 +24,6 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth = startingHealth;
         }
-        healthSlider.value = currentHealth;
+        healthSlider.fillAmount = currentHealth / 100;
     }
 }
