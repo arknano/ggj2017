@@ -45,8 +45,8 @@ public class PlayerController : MonoBehaviour {
         if (prewaveSpeedBoost < 1)
         {
             prewaveSpeedBoost = 1;
-        } else if (prewaveSpeedBoost >= 100){
-            prewaveSpeedBoost = 100;
+        } else if (prewaveSpeedBoost >= 10){
+            prewaveSpeedBoost = 10;
         }
 
         //when the boost button is held, increase the forward speed until it reaches the max speed
