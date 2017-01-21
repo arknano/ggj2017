@@ -25,10 +25,19 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = startingHealth;
         }
         healthSlider.fillAmount = currentHealth / 100;
+        if (currentHealth <= 0)
+        {
+
+        }
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth = currentHealth - damage;
+        if (currentHealth <= 0)
+        {
+            GetComponent<Respawn>().RespawnPlayer();
+        }
     }
+
 }
