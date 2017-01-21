@@ -45,6 +45,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000010329873296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013291793044}
+  - 114: {fileID: 114000012120750548}
+  m_Layer: 0
+  m_Name: Sonar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000010341392032
 GameObject:
   m_ObjectHideFlags: 1
@@ -286,7 +302,6 @@ GameObject:
   - 54: {fileID: 54000014054402294}
   - 114: {fileID: 114000012933054650}
   - 114: {fileID: 114000010710898792}
-  - 114: {fileID: 114000012049800846}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -407,10 +422,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013368297896}
-  m_LocalRotation: {x: -0, y: -0.70710707, z: -0, w: 0.70710653}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:
   - {fileID: 4000010343539968}
   - {fileID: 4000013209419816}
@@ -518,6 +533,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000011651170226}
   m_RootOrder: 1
+--- !u!4 &4000013291793044
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010329873296}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000013867128344}
+  m_RootOrder: 4
 --- !u!4 &4000013429075622
 Transform:
   m_ObjectHideFlags: 1
@@ -551,7 +579,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010869366822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -86.82, y: 9.62, z: 14.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -559,6 +587,7 @@ Transform:
   - {fileID: 224000013597979822}
   - {fileID: 4000013156048498}
   - {fileID: 4000011151234896}
+  - {fileID: 4000013291793044}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000013935653296
@@ -1117,21 +1146,22 @@ MonoBehaviour:
   currentHealth: 0
   healthSlider: {fileID: 114000010122386726}
   rechargeSpeed: 0
---- !u!114 &114000012049800846
+--- !u!114 &114000012120750548
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013368297896}
+  m_GameObject: {fileID: 1000010329873296}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc3681a50a781f943b50045074a94bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 9829c1afa7dc5284399a6a3dcc03002c, type: 3}
-  sonarSpeed: -100
+  sonarSpeed: 100
   sonarColour: {r: 1, g: 1, b: 1, a: 1}
   sonarThickness: 10
+  sonarSpawnDistance: 20
 --- !u!114 &114000012368189292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1218,7 +1248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4000011651170226}
-  speed: 15
+  speed: 0
 --- !u!114 &114000014212355440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1259,6 +1289,7 @@ MonoBehaviour:
   preWave: {fileID: 4000013156048498}
   maxPrewaveDist: 100
   prewaveSpeedBoost: 0
+  sonar: {fileID: 114000012120750548}
   thruster: {fileID: 4000013209419816}
 --- !u!124 &124000012930100660
 Behaviour:

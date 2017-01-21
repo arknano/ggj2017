@@ -7,30 +7,27 @@ public class PlayerSonar : MonoBehaviour {
     public float sonarSpeed;
     public Color sonarColour;
     public float sonarThickness;
+    public float sonarSpawnDistance;
 
-    private const float INITIAL_SONAR_DISTANCE = 50;
-    private float sonarDistance = INITIAL_SONAR_DISTANCE;
+    private Transform submarineTransform = null;
+    private float sonarDistance = 0;
 
 	void Start() {
 	    
 	}
 	
 	void FixedUpdate() {
-        bool shootSonar = Input.GetButtonDown("Pulse");
-        if (shootSonar)
+        if (submarineTransform != null)
         {
-            Debug.Log("Fire");
-            sonarDistance = INITIAL_SONAR_DISTANCE + transform.position.x;
+            sonarDistance += Time.fixedDeltaTime * sonarSpeed;
+            setShaderValues(getSonarPlaneEquation(), sonarColour, sonarThickness);
         }
-        sonarDistance += Time.fixedDeltaTime * sonarSpeed;
-
-        setShaderValues(getSonarPlaneEquation(), sonarColour, sonarThickness);
 	}
 
     private Vector4 getSonarPlaneEquation()
     {
-        Vector3 normal = transform.forward;
-        Vector3 point = transform.position + transform.forward * sonarDistance;
+        Vector3 normal = submarineTransform.forward;
+        Vector3 point = submarineTransform.position + submarineTransform.forward * sonarDistance;
 
         float d = -normal.x * point.x - normal.y * point.y - normal.z * point.z;
         return new Vector4(normal.x, normal.y, normal.z, d);
@@ -41,5 +38,11 @@ public class PlayerSonar : MonoBehaviour {
         Shader.SetGlobalVector("_SonarEquation", plane);
         Shader.SetGlobalVector("_SonarColour", colour);
         Shader.SetGlobalFloat("_SonarThickness", thickness);
+    }
+
+    public void emitSonar(Transform submarineTransform)
+    {
+        this.submarineTransform = submarineTransform;
+        sonarDistance = sonarSpawnDistance;
     }
 }

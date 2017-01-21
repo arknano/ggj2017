@@ -518,7 +518,7 @@ half4 applySonarEffect(half4 c, float4 worldPos) {
 	float denominator = sqrt(_SonarEquation.x * _SonarEquation.x + _SonarEquation.y * _SonarEquation.y + _SonarEquation.z * _SonarEquation.z);
 	float dist = numerator / denominator;
 
-	if (dist > 5 & dist < 50) {
+	if (dist > -_SonarThickness/2 & dist < _SonarThickness/2) {
 		float alphaA = 0.3;
 		float alphaB = 1.0;
 		c = _SonarColour;// (_SonarColour* alphaA + c * alphaB * (1 - alphaA)) /
