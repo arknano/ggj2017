@@ -1,37 +1,17 @@
 fileFormatVersion: 2
-guid: bcef65f2731746a4dbb075722150c112
-timeCreated: 1484919528
+guid: fcb5f36b3a8d17640914309fbacd484a
+timeCreated: 1484972918
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Antenna
-    100002: Commandtower_sub
-    100004: MainBody_sub
-    100006: Sidefins
-    100008: //RootNode
-    100010: Top_bottom_fins
-    400000: Antenna
-    400002: Commandtower_sub
-    400004: MainBody_sub
-    400006: Sidefins
-    400008: //RootNode
-    400010: Top_bottom_fins
-    2300000: Antenna
-    2300002: Commandtower_sub
-    2300004: MainBody_sub
-    2300006: Sidefins
-    2300008: Top_bottom_fins
-    3300000: Antenna
-    3300002: Commandtower_sub
-    3300004: MainBody_sub
-    3300006: Sidefins
-    3300008: Top_bottom_fins
-    4300000: Antenna
-    4300002: Commandtower_sub
-    4300004: MainBody_sub
-    4300006: Sidefins
-    4300008: Top_bottom_fins
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: tile
+    6400000: //RootNode
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -56,9 +36,9 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 100
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -90,7 +70,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
