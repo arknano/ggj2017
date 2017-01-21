@@ -2,8 +2,9 @@
 {
 	Properties
 	{
-		_TestPosWow("TestPos", Vector) = (0.0, 0.0, 0.0)
-		_MainTex ("Texture", 2D) = "black" {}
+		_SonarThickness ("Sonar Thickness", Float) = 1.0
+	    _SonarColour("Sonar Colour", Color) = (1, 1, 1, 1)
+		_MainTex("Texture", 2D) = "black" {}
 	}
 		SubShader
 	{
@@ -18,7 +19,12 @@
 
 			#include "UnityCG.cginc"
 
-			float4 _TestPosWow;
+			// In order to programmatically change this value, it can not be a 
+			// public property
+			float4 _SonarPlane;
+
+			float _SonarThickness;
+			float4 _SonarColour;
 
 			struct appdata
 			{
@@ -50,11 +56,9 @@
 				// just invert the colors
 				col = col;
 
-				if (i.world.x > _TestPosWow.x && i.world.x < _TestPosWow.x + 1) {
-				//if (_TestPosWow.sx != 4) {
-					return fixed4(1, 1, 1, 1);
-				}
-				else {
+				if (i.world.x > _SonarPlane.x && i.world.x < _SonarPlane.x + _SonarThickness) {
+					return _SonarColour;
+				} else {
 					return col;
 				}
 			}
