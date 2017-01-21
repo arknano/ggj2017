@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: eb21a70c29dd0bc4f8872a3ce85cfd21
-timeCreated: 1484959613
+guid: 976433be9367fcf4fb2cb436d042d289
+timeCreated: 1484964947
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: hourglass_straightrock
+    4300000: Rock1
     9500000: //RootNode
   materials:
     importMaterials: 1
