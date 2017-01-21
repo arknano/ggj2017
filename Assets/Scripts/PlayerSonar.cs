@@ -8,7 +8,7 @@ public class PlayerSonar : MonoBehaviour {
     public Color sonarColour;
     public float sonarThickness;
 
-    private const float INITIAL_SONAR_DISTANCE = -100;
+    private const float INITIAL_SONAR_DISTANCE = 50;
     private float sonarDistance = INITIAL_SONAR_DISTANCE;
 
 	void Start() {
@@ -20,7 +20,7 @@ public class PlayerSonar : MonoBehaviour {
         if (shootSonar)
         {
             Debug.Log("Fire");
-            sonarDistance = INITIAL_SONAR_DISTANCE;
+            sonarDistance = INITIAL_SONAR_DISTANCE + transform.position.x;
         }
         sonarDistance += Time.fixedDeltaTime * sonarSpeed;
 

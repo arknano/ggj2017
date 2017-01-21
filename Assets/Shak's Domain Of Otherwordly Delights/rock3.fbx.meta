@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: b741f1996255934448303cbfcd7765ab
-timeCreated: 1484932474
-licenseType: Pro
+guid: 3492b2380329e4749abcffb7907715b0
+timeCreated: 1484964946
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cliff4
+    4300000: Rock3
     6400000: //RootNode
     9500000: //RootNode
   materials:
