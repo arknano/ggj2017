@@ -425,7 +425,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: bcef65f2731746a4dbb075722150c112, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2300004, guid: bcef65f2731746a4dbb075722150c112, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -508,7 +508,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1001 &295673712
 Prefab:
   m_ObjectHideFlags: 0
@@ -1201,6 +1201,69 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 32065359f3ee53043b2b4c9f046c5432, type: 3}
   m_PrefabInternal: {fileID: 657940080}
+--- !u!1 &728291231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 728291232}
+  - 108: {fileID: 728291233}
+  m_Layer: 0
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &728291232
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728291231}
+  m_LocalRotation: {x: -0, y: 0.9976517, z: -0, w: -0.06849181}
+  m_LocalPosition: {x: 139, y: 910, z: 27}
+  m_LocalScale: {x: 1.0091648, y: 1, z: 0.50458246}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!108 &728291233
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728291231}
+  m_Enabled: 1
+  serializedVersion: 7
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.59
+  m_Range: 5000
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &732183068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,7 +1438,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 820549081}
-  m_LocalRotation: {x: 0.011418974, y: 0.70701456, z: -0.011418974, w: 0.70701456}
+  m_LocalRotation: {x: 0.011418975, y: 0.7070146, z: -0.011418975, w: 0.7070146}
   m_LocalPosition: {x: -81, y: 31.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 1.8310001, y: 90.00001, z: 0}
@@ -1797,6 +1860,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1032031455}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1035991160 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100008, guid: bcef65f2731746a4dbb075722150c112, type: 3}
+  m_PrefabInternal: {fileID: 159993393}
+--- !u!114 &1035991161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1035991160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3681a50a781f943b50045074a94bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 9829c1afa7dc5284399a6a3dcc03002c, type: 3}
+  sonarSpeed: 600
+  sonarColour: {r: 1, g: 1, b: 1, a: 0}
+  sonarThickness: 50
 --- !u!1 &1063997809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,7 +2500,7 @@ Transform:
   - {fileID: 1086653254}
   - {fileID: 1615335758}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1001 &1497529277
 Prefab:
   m_ObjectHideFlags: 0
@@ -2596,7 +2678,7 @@ Transform:
   - {fileID: 943889612}
   - {fileID: 83643000}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1001 &1571847023
 Prefab:
   m_ObjectHideFlags: 0
