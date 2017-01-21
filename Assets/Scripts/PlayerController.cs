@@ -16,7 +16,13 @@ public class PlayerController : MonoBehaviour {
     public float minPulsePower;
     public float pulseDrainSpeed;
 
+    public Transform preWave;
+    public float maxPrewaveDist;
+
     float currentForwardSpeed;
+    public float prewaveSpeedBoost;
+
+
     Rigidbody rb;
     public Transform thruster;
     PlayerPower power;
@@ -32,7 +38,17 @@ public class PlayerController : MonoBehaviour {
         float vertical = Input.GetAxis("Vertical");
         float turn = Input.GetAxis("Turn");
 
-        
+        float dist = Vector3.Distance(preWave.position, transform.position);
+        prewaveSpeedBoost = (1 / dist) * maxPrewaveDist;
+        if (prewaveSpeedBoost < 1)
+        {
+            prewaveSpeedBoost = 1;
+        } else if (prewaveSpeedBoost >= 100){
+            prewaveSpeedBoost = 100;
+        }
+        Debug.Log("distance: " + dist);
+        Debug.Log("prewaveSpeedBoost: " + prewaveSpeedBoost);
+
         //when the boost button is held, increase the forward speed until it reaches the max speed
         if (Input.GetButton("Boost") && (power.currentPower >= 0))
         {
@@ -59,7 +75,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         //while the pulse button is held, continue to draw power
-        if (Input.GetButton("Pulse") && (power.currentPower >= minPulsePower))
+        if (Input.GetButton("Pulse") && (power.currentPower > 0))
         {
             power.currentPower = power.currentPower - Time.deltaTime * pulseDrainSpeed;
 
@@ -68,7 +84,7 @@ public class PlayerController : MonoBehaviour {
         Vector3 velocity = rb.velocity;
 
         //move the player forward at a constant speed
-        transform.Translate(transform.forward * currentForwardSpeed, Space.World);
+        transform.Translate(transform.forward * currentForwardSpeed * prewaveSpeedBoost, Space.World);
 
         //add the lateral input speeds
         rb.AddForce(transform.right * horizontal * horizSpeed);
