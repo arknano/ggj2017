@@ -519,10 +519,10 @@ half4 applySonarEffect(half4 c, float4 worldPos) {
 	float dist = numerator / denominator;
 
 	if (dist > -_SonarThickness/2 & dist < _SonarThickness/2) {
-		float alphaA = 0.3;
-		float alphaB = 1.0;
-		c = _SonarColour;// (_SonarColour* alphaA + c * alphaB * (1 - alphaA)) /
-			//(alphaA + alphaB * (1 - alphaA));
+		float alphaA = 0.2;
+		float alphaB = 0.9;
+		c = (_SonarColour* alphaA + c * alphaB * (1 - alphaA)) /
+			(alphaA + alphaB * (1 - alphaA));
 	}
 	return c;
 }
