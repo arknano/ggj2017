@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public int startingHealth;
+    public float startingHealth;
     public float currentHealth;
     public Image healthSlider;
     public float rechargeSpeed;
@@ -25,5 +25,10 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = startingHealth;
         }
         healthSlider.fillAmount = currentHealth / 100;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth = currentHealth - damage;
     }
 }
