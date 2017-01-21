@@ -107,6 +107,9 @@ Material:
         name: _SmoothnessTextureChannel
       second: 0
     - first:
+        name: _SonarThickness
+      second: 21.5
+    - first:
         name: _SpecularHighlights
       second: 1
     - first:
@@ -128,6 +131,9 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _SonarColour
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _TestPosWow
       second: {r: 78.9, g: 0, b: 0, a: 1}
