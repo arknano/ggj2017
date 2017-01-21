@@ -24,17 +24,21 @@ public class PlayerSonar : MonoBehaviour {
         }
         sonarDistance += Time.fixedDeltaTime * sonarSpeed;
 
-        setShaderValues(getSonarPlane(), sonarColour, sonarThickness);
+        setShaderValues(getSonarPlaneEquation(), sonarColour, sonarThickness);
 	}
 
-    public Vector4 getSonarPlane()
+    private Vector4 getSonarPlaneEquation()
     {
-        return new Vector4(sonarDistance, 0, 0, 1);
+        Vector3 normal = transform.forward;
+        Vector3 point = transform.position + transform.forward * sonarDistance;
+
+        float d = -normal.x * point.x - normal.y * point.y - normal.z * point.z;
+        return new Vector4(normal.x, normal.y, normal.z, d);
     }
 
     private void setShaderValues(Vector4 plane, Vector4 colour, float thickness)
     {
-        Shader.SetGlobalVector("_SonarPlane", plane);
+        Shader.SetGlobalVector("_SonarEquation", plane);
         Shader.SetGlobalVector("_SonarColour", colour);
         Shader.SetGlobalFloat("_SonarThickness", thickness);
     }

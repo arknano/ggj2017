@@ -509,16 +509,20 @@ VertexOutputForwardAdd vertForwardAdd(VertexInput v)
 // In order to programmatically change these value, they can't be
 // public properties. To make them interactive in the editor we
 // use Shader.SetGlobalXXXXX() from another controller
-float4 _SonarPlane;
+float4 _SonarEquation;
 float _SonarThickness;
 float4 _SonarColour;
 
 half4 applySonarEffect(half4 c, float4 worldPos) {
-	if (worldPos.x > _SonarPlane.x && worldPos.x < _SonarPlane.x + _SonarThickness) {
+	float numerator = _SonarEquation.x * worldPos.x + _SonarEquation.y * worldPos.y + _SonarEquation.z * worldPos.z + _SonarEquation.w;
+	float denominator = sqrt(_SonarEquation.x * _SonarEquation.x + _SonarEquation.y * _SonarEquation.y + _SonarEquation.z * _SonarEquation.z);
+	float dist = numerator / denominator;
+
+	if (dist > 5 & dist < 50) {
 		float alphaA = 0.3;
 		float alphaB = 1.0;
-		c = (_SonarColour* alphaA + c * alphaB * (1 - alphaA)) /
-			(alphaA + alphaB * (1 - alphaA));
+		c = _SonarColour;// (_SonarColour* alphaA + c * alphaB * (1 - alphaA)) /
+			//(alphaA + alphaB * (1 - alphaA));
 	}
 	return c;
 }
