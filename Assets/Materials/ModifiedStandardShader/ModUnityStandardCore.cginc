@@ -512,17 +512,35 @@ VertexOutputForwardAdd vertForwardAdd(VertexInput v)
 float4 _SonarEquation;
 float _SonarThickness;
 float4 _SonarColour;
+float4 _CameraPosition;
+float4 _FogColour;
+float _FogDistance;
+
+half4 blend(half4 colourA, half4 colourB, float alphaA, float alphaB) {
+	return (colourA * alphaA + colourB * alphaB * (1 - alphaA)) /
+		(alphaA + alphaB * (1 - alphaA));
+}
+
+half4 applyFogEffect(half4 c, float4 worldPos, float4 cameraPosition) {
+	float xComp = (cameraPosition.x - worldPos.x) * (cameraPosition.x - worldPos.x);
+	float yComp = (cameraPosition.y - worldPos.y) * (cameraPosition.y - worldPos.y);
+	float zComp = (cameraPosition.z - worldPos.z) * (cameraPosition.z - worldPos.z);
+	float distanceToCamera = sqrt(xComp + yComp + zComp);
+	float fade = clamp(distanceToCamera / _FogDistance, 0, 1);
+	float param = fade * fade;
+	c = lerp(c, _FogColour, param);
+	return c;
+}
 
 half4 applySonarEffect(half4 c, float4 worldPos) {
 	float numerator = _SonarEquation.x * worldPos.x + _SonarEquation.y * worldPos.y + _SonarEquation.z * worldPos.z + _SonarEquation.w;
 	float denominator = sqrt(_SonarEquation.x * _SonarEquation.x + _SonarEquation.y * _SonarEquation.y + _SonarEquation.z * _SonarEquation.z);
-	float dist = numerator / denominator;
+	float sonarTravelDistance = numerator / denominator;
 
-	if (dist > -_SonarThickness/2 & dist < _SonarThickness/2) {
+	if (sonarTravelDistance > -_SonarThickness/2 & sonarTravelDistance < _SonarThickness/2) {
 		float alphaA = 0.2;
 		float alphaB = 0.9;
-		c = (_SonarColour* alphaA + c * alphaB * (1 - alphaA)) /
-			(alphaA + alphaB * (1 - alphaA));
+		c = blend(_SonarColour, c, alphaA, alphaB);	
 	}
 	return c;
 }
@@ -538,6 +556,7 @@ half4 fragForwardAddInternal(VertexOutputForwardAdd i)
 
 	UNITY_APPLY_FOG_COLOR(i.fogCoord, c.rgb, half4(0, 0, 0, 0)); // fog towards black in additive pass
 
+	c = applyFogEffect(c, i.posWorld, _CameraPosition);
 	c = applySonarEffect(c, i.posWorld);
 
 	return OutputForward(c, s.alpha);

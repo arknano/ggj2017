@@ -1290,6 +1290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4000011651170226}
+  fogColour: {r: 0, g: 0, b: 0, a: 0}
+  fogDistance: 100
   distanceFromTarget: 12
   positionLerpMultiplier: 6
   rotationLerpMultiplier: 2
