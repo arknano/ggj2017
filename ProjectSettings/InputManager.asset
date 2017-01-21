@@ -11,8 +11,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: left
     positiveButton: right
-    altNegativeButton: a
-    altPositiveButton: d
+    altNegativeButton: q
+    altPositiveButton: e
     gravity: 3
     dead: 0.001
     sensitivity: 3
@@ -73,8 +73,8 @@ InputManager:
     m_Name: Turn
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: q
-    positiveButton: e
+    negativeButton: a
+    positiveButton: d
     altNegativeButton: joystick button 8
     altPositiveButton: joystick button 9
     gravity: 3
