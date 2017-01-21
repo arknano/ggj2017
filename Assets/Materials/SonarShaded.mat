@@ -108,7 +108,7 @@ Material:
       second: 0
     - first:
         name: _SonarThickness
-      second: 21.5
+      second: 50
     - first:
         name: _SpecularHighlights
       second: 1
@@ -133,7 +133,7 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _SonarColour
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0, g: 0.16176468, b: 0.04127786, a: 1}
     - first:
         name: _TestPosWow
       second: {r: 78.9, g: 0, b: 0, a: 1}
