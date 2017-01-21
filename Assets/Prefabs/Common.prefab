@@ -1590,6 +1590,7 @@ MonoBehaviour:
   currentForwardSpeed: 0
   prewaveSpeedBoost: 0
   sonar: {fileID: 114000012120750548}
+  score: 0
   pulseInterval: 1
   thruster: {fileID: 4000013209419816}
 --- !u!124 &124000011933266898
