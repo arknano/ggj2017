@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour {
 
     public PlayerSonar sonar;
 
+    public int score;
+
+    private float pulseTime = 0.0f;
+    public float pulseInterval = 1.0f;
 
     Rigidbody rb;
     public Transform thruster;
@@ -68,18 +72,24 @@ public class PlayerController : MonoBehaviour {
         }
 
         //when the pulse button is pressed, immediately take the initial power cost
-        if (Input.GetButtonDown("Pulse") && (power.currentPower >= minPulsePower))
+        if (Input.GetButtonDown("Pulse"))
         {
-            power.currentPower = power.currentPower - minPulsePower;
+            //power.currentPower = power.currentPower - minPulsePower;
             sonar.emitSonar(transform);
         }
 
-        //while the pulse button is held, continue to draw power
-        if (Input.GetButton("Pulse") && (power.currentPower > 0))
-        {
-            power.currentPower = power.currentPower - Time.deltaTime * pulseDrainSpeed;
+        ////while the pulse button is held, continue to draw power
+        //if (Input.GetButton("Pulse") && (power.currentPower > 0))
+        //{
+        //    power.currentPower = power.currentPower - Time.deltaTime * pulseDrainSpeed;
 
-        }
+        //}
+
+        //if (Time.time >= pulseTime)
+        //{
+        //    sonar.emitSonar(transform);
+        //    pulseTime = Time.time + pulseInterval;
+        //}
 
         Vector3 velocity = rb.velocity;
 
