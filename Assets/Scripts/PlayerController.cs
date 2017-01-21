@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
     public Transform preWave;
     public float maxPrewaveDist;
 
-    float currentForwardSpeed;
+    public float currentForwardSpeed;
     public float prewaveSpeedBoost;
 
     public PlayerSonar sonar;
