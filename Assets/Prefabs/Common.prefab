@@ -1241,9 +1241,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 9829c1afa7dc5284399a6a3dcc03002c, type: 3}
-  sonarSpeed: 50
-  sonarColour: {r: 1, g: 1, b: 1, a: 1}
-  sonarThickness: 5
+  sonarSpeed: 150
+  sonarColour: {r: 1, g: 0, b: 1, a: 1}
+  sonarThickness: 2
   sonarSpawnDistance: 0
 --- !u!114 &114000012442128390
 MonoBehaviour:
