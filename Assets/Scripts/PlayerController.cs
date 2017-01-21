@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour {
     float currentForwardSpeed;
     public float prewaveSpeedBoost;
 
+    public PlayerSonar sonar;
+
 
     Rigidbody rb;
     public Transform thruster;
@@ -46,8 +48,6 @@ public class PlayerController : MonoBehaviour {
         } else if (prewaveSpeedBoost >= 100){
             prewaveSpeedBoost = 100;
         }
-        Debug.Log("distance: " + dist);
-        Debug.Log("prewaveSpeedBoost: " + prewaveSpeedBoost);
 
         //when the boost button is held, increase the forward speed until it reaches the max speed
         if (Input.GetButton("Boost") && (power.currentPower >= 0))
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Pulse") && (power.currentPower >= minPulsePower))
         {
             power.currentPower = power.currentPower - minPulsePower;
-
+            sonar.emitSonar(transform);
         }
 
         //while the pulse button is held, continue to draw power
