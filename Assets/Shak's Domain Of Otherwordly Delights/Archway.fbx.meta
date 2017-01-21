@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 775c35d16cea7cd468c7e3c7ed1fbf61
-timeCreated: 1484984124
+guid: 9e7c375e3cf2bda419d8b0a7bff66ef8
+timeCreated: 1485000387
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Obilisk
-    6400000: //RootNode
+    4300000: Archway
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -36,9 +35,9 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
