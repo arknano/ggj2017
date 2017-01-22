@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
     public Image healthSlider;
     public float rechargeSpeed;
+    public GameObject deadScreen;
+
 
     // Use this for initialization
     void Start()
@@ -36,7 +38,8 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = currentHealth - damage;
         if (currentHealth <= 0)
         {
-            GetComponent<Respawn>().RespawnPlayer();
+            deadScreen.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 
