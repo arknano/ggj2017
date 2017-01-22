@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -110,5 +111,10 @@ public class PlayerController : MonoBehaviour {
         rb.angularVelocity = rb.angularVelocity * 0.9f;
 
 
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(1);
     }
 }
