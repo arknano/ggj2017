@@ -44,6 +44,7 @@ public class PlayerSonar : MonoBehaviour {
 
     private IEnumerator EmitSonarCoroutine()
     {
+        GetComponent<AudioSource>().Play();
         emitSonar(submarineTransform);
         yield return new WaitForSeconds(sonarDuration + sonarEmitDelay);
         StartCoroutine(EmitSonarCoroutine());
