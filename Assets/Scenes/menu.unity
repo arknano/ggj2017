@@ -219,6 +219,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcef65f2731746a4dbb075722150c112, type: 3}
   m_IsPrefabParent: 0
+--- !u!114 &451702627 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11488040, guid: 45616935e4fe10f48b62da1347801a16,
+    type: 2}
+  m_PrefabInternal: {fileID: 1034112521}
+  m_Script: {fileID: 11500000, guid: b4a5fa76fe0a547ee842d7fecb84c442, type: 3}
 --- !u!1001 &1034112521
 Prefab:
   m_ObjectHideFlags: 0
@@ -298,11 +304,15 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11467570, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
-      propertyPath: m_Text
-      value: 'SUBMARINE
-
-        GAME'
+    - target: {fileID: 114000013499159354, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 451702627}
+    - target: {fileID: 114000013499159354, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGameInScene
       objectReference: {fileID: 0}
     - target: {fileID: 8286744, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
       propertyPath: panLevelCustomCurve.m_RotationOrder
@@ -312,10 +322,18 @@ Prefab:
       propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11488040, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
-      propertyPath: changeScenes
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 8286744, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fb5c5c5e6ecbf44429f195eae973bed3, type: 3}
+    - target: {fileID: 11423466, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
+      propertyPath: titleMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: fb5c5c5e6ecbf44429f195eae973bed3, type: 3}
+    - target: {fileID: 11423466, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
+      propertyPath: mainMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: fb5c5c5e6ecbf44429f195eae973bed3, type: 3}
     - target: {fileID: 22496010, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
       propertyPath: m_AnchorMin.y
       value: 1
@@ -388,10 +406,10 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 83.66042
       objectReference: {fileID: 0}
-    - target: {fileID: 8286744, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 1a5e5e824756387438beb4bae92cc11f, type: 3}
+    - target: {fileID: 11488040, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
+      propertyPath: changeScenes
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
   m_IsPrefabParent: 0
