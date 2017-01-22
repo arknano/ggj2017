@@ -403,7 +403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &259687103
 Light:
   m_ObjectHideFlags: 0
@@ -1285,11 +1285,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 732183068}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &736930031 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000011651170226, guid: 1fee935b3841a5348aa27b65b8661383,
-    type: 2}
-  m_PrefabInternal: {fileID: 2138498315}
 --- !u!1001 &763442403
 Prefab:
   m_ObjectHideFlags: 0
@@ -3724,64 +3719,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013867128344, guid: 1fee935b3841a5348aa27b65b8661383, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
+    - target: {fileID: 114000012442128390, guid: 1fee935b3841a5348aa27b65b8661383,
         type: 2}
-      propertyPath: sonarThickness
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 20000013149313284, guid: 1fee935b3841a5348aa27b65b8661383,
-        type: 2}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
-        type: 2}
-      propertyPath: sonarSpeed
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
-        type: 2}
-      propertyPath: sonarSpawnDistance
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
-        type: 2}
-      propertyPath: sonarColour.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
-        type: 2}
-      propertyPath: sonarColour.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
-        type: 2}
-      propertyPath: sonarColour.b
-      value: 0.2965517
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
-        type: 2}
-      propertyPath: duration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
-        type: 2}
-      propertyPath: submarineTransform
-      value: 
-      objectReference: {fileID: 736930031}
-    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
-        type: 2}
-      propertyPath: sonarDuration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
-        type: 2}
-      propertyPath: sonarEmitDelay
-      value: 0.1
+      propertyPath: damageMultiplier
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013790110714, guid: 1fee935b3841a5348aa27b65b8661383, type: 2}
