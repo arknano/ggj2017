@@ -535,13 +535,32 @@ half4 applyFogEffect(half4 c, float4 worldPos, float4 cameraPosition) {
 half4 applySonarEffect(half4 c, float4 worldPos) {
 	float numerator = _SonarEquation.x * worldPos.x + _SonarEquation.y * worldPos.y + _SonarEquation.z * worldPos.z + _SonarEquation.w;
 	float denominator = sqrt(_SonarEquation.x * _SonarEquation.x + _SonarEquation.y * _SonarEquation.y + _SonarEquation.z * _SonarEquation.z);
-	float sonarTravelDistance = numerator / denominator;
+	float distanceFromSonar = numerator / denominator;
+	distanceFromSonar = -distanceFromSonar;
 
-	if (sonarTravelDistance > -_SonarThickness/2 & sonarTravelDistance < _SonarThickness/2) {
-		float alphaA = 0.2;
-		float alphaB = 0.9;
-		c = blend(_SonarColour, c, alphaA, alphaB);	
+	/*float fade = clamp(1 - _SonarThickness / distanceFromSonar, 0, 1);
+	half4 sonarMainColour = lerp(c, _SonarColour, 0.95);
+	c = clamp(lerp(_SonarColour, c, fade), 0, 1);*/
+
+	if (distanceFromSonar < _SonarThickness && distanceFromSonar > 0) {
+		float fade = clamp(distanceFromSonar / _SonarThickness, 0, 1);
+		fade = clamp(1/(0.5*(1 - fade) + 1), 0, 1);////15/fade - 15;// pow(fade, 2);
+		half4 sonarMainColour = lerp(c, _SonarColour, 1);
+		c = lerp(sonarMainColour, half4(0, 0, 0, 1), fade);
 	}
+
+	/*float tail = 1;
+	float length = _SonarThickness / tail;
+	float fade = clamp(1 - length / distanceFromSonar, 0, 1);
+	if (abs(distanceFromSonar) < _SonarThickness) {
+		float f = abs(distanceFromSonar/tail + length/ 2) / length;
+		c = lerp(_SonarColour, half4(0, 0, 0, 0), f);
+	}*/
+	
+	/*if (abs(distanceFromSonar) < 5) {
+		c = blend(half4(1, 1, 1, 1), c, _SonarThickness / distanceFromSonar, 0.5);
+	}*/
+
 	return c;
 }
 
@@ -549,14 +568,14 @@ half4 fragForwardAddInternal(VertexOutputForwardAdd i)
 {
 	FRAGMENT_SETUP_FWDADD(s)
 
-		UnityLight light = AdditiveLight(IN_LIGHTDIR_FWDADD(i), LIGHT_ATTENUATION(i));
+	UnityLight light = AdditiveLight(IN_LIGHTDIR_FWDADD(i), LIGHT_ATTENUATION(i));
 	UnityIndirect noIndirect = ZeroIndirect();
 
 	half4 c = UNITY_BRDF_PBS(s.diffColor, s.specColor, s.oneMinusReflectivity, s.smoothness, s.normalWorld, -s.eyeVec, light, noIndirect);
 
 	UNITY_APPLY_FOG_COLOR(i.fogCoord, c.rgb, half4(0, 0, 0, 0)); // fog towards black in additive pass
 
-	c = applyFogEffect(c, i.posWorld, _CameraPosition);
+	//c = applyFogEffect(c, i.posWorld, _CameraPosition);
 	c = applySonarEffect(c, i.posWorld);
 
 	return OutputForward(c, s.alpha);
