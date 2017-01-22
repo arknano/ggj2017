@@ -8,4 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/menu.unity
   - enabled: 1
-    path: Assets/Scenes/seanScene.unity
+    path: Assets/Scenes/Morgan Old/morgansScene2.unity
