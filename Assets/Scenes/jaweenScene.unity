@@ -1285,6 +1285,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 732183068}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &736930031 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000011651170226, guid: 1fee935b3841a5348aa27b65b8661383,
+    type: 2}
+  m_PrefabInternal: {fileID: 2138498315}
 --- !u!1001 &763442403
 Prefab:
   m_ObjectHideFlags: 0
@@ -3741,7 +3746,7 @@ Prefab:
     - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
         type: 2}
       propertyPath: sonarSpawnDistance
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
         type: 2}
@@ -3757,6 +3762,26 @@ Prefab:
         type: 2}
       propertyPath: sonarColour.b
       value: 0.2965517
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
+        type: 2}
+      propertyPath: duration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
+        type: 2}
+      propertyPath: submarineTransform
+      value: 
+      objectReference: {fileID: 736930031}
+    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
+        type: 2}
+      propertyPath: sonarDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012120750548, guid: 1fee935b3841a5348aa27b65b8661383,
+        type: 2}
+      propertyPath: sonarEmitDelay
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013790110714, guid: 1fee935b3841a5348aa27b65b8661383, type: 2}

@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Pulse"))
         {
             //power.currentPower = power.currentPower - minPulsePower;
-            sonar.emitSonar(transform);
+            //sonar.emitSonar(transform);
         }
 
         ////while the pulse button is held, continue to draw power

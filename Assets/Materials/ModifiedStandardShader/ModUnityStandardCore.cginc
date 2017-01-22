@@ -515,6 +515,7 @@ float4 _SonarColour;
 float4 _CameraPosition;
 float4 _FogColour;
 float _FogDistance;
+float _SonarDissipate;
 
 half4 blend(half4 colourA, half4 colourB, float alphaA, float alphaB) {
 	return (colourA * alphaA + colourB * alphaB * (1 - alphaA)) /
@@ -545,7 +546,7 @@ half4 applySonarEffect(half4 c, float4 worldPos) {
 	if (distanceFromSonar < _SonarThickness && distanceFromSonar > 0) {
 		float fade = clamp(distanceFromSonar / _SonarThickness, 0, 1);
 		fade = clamp(1/(0.5*(1 - fade) + 1), 0, 1);////15/fade - 15;// pow(fade, 2);
-		half4 sonarMainColour = lerp(c, _SonarColour, 1);
+		half4 sonarMainColour = lerp(c, _SonarColour, _SonarDissipate);
 		c = lerp(sonarMainColour, half4(0, 0, 0, 1), fade);
 	}
 
